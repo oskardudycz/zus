@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="naws.zus.pl" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="NawsUslugi" targetNamespace="naws.zus.pl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NawsUslugiSoap_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+        <wsap:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="naws.zus.pl" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="WyslijPrzesylke">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="pbyPrzesylka" type="xs:base64Binary" />
+            <xs:element minOccurs="1" maxOccurs="1" name="uiPrzesylkaDlugosc" type="xs:unsignedInt" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strNazwaProducenta" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strNazwaOprogramowania" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strWersjaOprogramowania" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strB64SkrotPrzesylkiIn" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strTypPrzesylki" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="metodaPodpisu" nillable="true" type="xs:int" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strB64SkrotPrzesylkiOut" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strIdentyfikator" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="WyslijPrzesylkeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="strB64SkrotPrzesylkiOut" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strIdentyfikator" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckTransmision">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="byDataIn" type="xs:base64Binary" />
+            <xs:element minOccurs="1" maxOccurs="1" name="uiDataInLength" type="xs:unsignedInt" />
+            <xs:element minOccurs="0" maxOccurs="1" name="byDataOut" type="xs:base64Binary" />
+            <xs:element minOccurs="1" maxOccurs="1" name="uiDataOutLength" type="xs:unsignedInt" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CheckTransmisionResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="byDataOut" type="xs:base64Binary" />
+            <xs:element minOccurs="1" maxOccurs="1" name="uiDataOutLength" type="xs:unsignedInt" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PobierzPotwierdzenie">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="strIdentyfikator" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strNazwaProducenta" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strNazwaOprogramowania" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strWersjaOprogramowania" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strIdZadania" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="DataWpisu" type="xs:dateTime" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strTyp" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="uiWielkoscPrzesylki" type="xs:unsignedInt" />
+            <xs:element minOccurs="0" maxOccurs="1" name="byPrzesylka" type="xs:base64Binary" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strB64Skrot" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PobierzPotwierdzenieResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="strIdZadania" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="DataWpisu" type="xs:dateTime" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strTyp" type="xs:string" />
+            <xs:element minOccurs="1" maxOccurs="1" name="uiWielkoscPrzesylki" type="xs:unsignedInt" />
+            <xs:element minOccurs="0" maxOccurs="1" name="byPrzesylka" type="xs:base64Binary" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strB64Skrot" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PobierzIndexPrzesylek">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="strIdZadania" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strNazwaProducenta" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strNazwaOprogramowania" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="strWersjaOprogramowania" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="msgIndex" type="tns:MessageIndex" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="MessageIndex">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="m_collection" type="tns:ArrayOfMessageIndexElement" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfMessageIndexElement">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="MessageIndexElement" nillable="true" type="tns:MessageIndexElement" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MessageIndexElement">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="strIdentyfikator" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="strIdZadania" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="DataWpisu" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="1" name="strTyp" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="uiWielkoscPrzesylki" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="strB64Hash" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PobierzIndexPrzesylekResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="msgIndex" type="tns:MessageIndex" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:complexType name="Exception">
+        <xs:sequence>
+          <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip" />
+        </xs:sequence>
+        <xs:attribute ref="ser:FactoryType" />
+      </xs:complexType>
+      <xs:element name="Exception" nillable="true" type="tns:Exception" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="INawsUslugi_WyslijPrzesylke_InputMessage">
+    <wsdl:part name="parameters" element="tns:WyslijPrzesylke" />
+  </wsdl:message>
+  <wsdl:message name="INawsUslugi_WyslijPrzesylke_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WyslijPrzesylkeResponse" />
+  </wsdl:message>
+  <wsdl:message name="INawsUslugi_WyslijPrzesylke_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/System" name="detail" element="q1:Exception" />
+  </wsdl:message>
+  <wsdl:message name="INawsUslugi_CheckTransmision_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTransmision" />
+  </wsdl:message>
+  <wsdl:message name="INawsUslugi_CheckTransmision_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTransmisionResponse" />
+  </wsdl:message>
+  <wsdl:message name="INawsUslugi_CheckTransmision_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/System" name="detail" element="q2:Exception" />
+  </wsdl:message>
+  <wsdl:message name="INawsUslugi_PobierzPotwierdzenie_InputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzPotwierdzenie" />
+  </wsdl:message>
+  <wsdl:message name="INawsUslugi_PobierzPotwierdzenie_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzPotwierdzenieResponse" />
+  </wsdl:message>
+  <wsdl:message name="INawsUslugi_PobierzPotwierdzenie_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/System" name="detail" element="q3:Exception" />
+  </wsdl:message>
+  <wsdl:message name="INawsUslugi_PobierzIndexPrzesylek_InputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzIndexPrzesylek" />
+  </wsdl:message>
+  <wsdl:message name="INawsUslugi_PobierzIndexPrzesylek_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PobierzIndexPrzesylekResponse" />
+  </wsdl:message>
+  <wsdl:message name="INawsUslugi_PobierzIndexPrzesylek_ExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/System" name="detail" element="q4:Exception" />
+  </wsdl:message>
+  <wsdl:portType name="INawsUslugi">
+    <wsdl:operation name="WyslijPrzesylke">
+      <wsdl:input wsaw:Action="naws.zus.pl/WyslijPrzesylke" message="tns:INawsUslugi_WyslijPrzesylke_InputMessage" />
+      <wsdl:output wsaw:Action="naws.zus.pl/WyslijPrzesylkeResponse" message="tns:INawsUslugi_WyslijPrzesylke_OutputMessage" />
+      <wsdl:fault wsaw:Action="naws.zus.pl/INawsUslugi/WyslijPrzesylkeExceptionFault" name="ExceptionFault" message="tns:INawsUslugi_WyslijPrzesylke_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransmision">
+      <wsdl:input wsaw:Action="naws.zus.pl/CheckTransmision" message="tns:INawsUslugi_CheckTransmision_InputMessage" />
+      <wsdl:output wsaw:Action="naws.zus.pl/CheckTransmisionResponse" message="tns:INawsUslugi_CheckTransmision_OutputMessage" />
+      <wsdl:fault wsaw:Action="naws.zus.pl/INawsUslugi/CheckTransmisionExceptionFault" name="ExceptionFault" message="tns:INawsUslugi_CheckTransmision_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PobierzPotwierdzenie">
+      <wsdl:input wsaw:Action="naws.zus.pl/PobierzPotwierdzenie" message="tns:INawsUslugi_PobierzPotwierdzenie_InputMessage" />
+      <wsdl:output wsaw:Action="naws.zus.pl/PobierzPotwierdzenieResponse" message="tns:INawsUslugi_PobierzPotwierdzenie_OutputMessage" />
+      <wsdl:fault wsaw:Action="naws.zus.pl/INawsUslugi/PobierzPotwierdzenieExceptionFault" name="ExceptionFault" message="tns:INawsUslugi_PobierzPotwierdzenie_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PobierzIndexPrzesylek">
+      <wsdl:input wsaw:Action="naws.zus.pl/PobierzIndexPrzesylek" message="tns:INawsUslugi_PobierzIndexPrzesylek_InputMessage" />
+      <wsdl:output wsaw:Action="naws.zus.pl/PobierzIndexPrzesylekResponse" message="tns:INawsUslugi_PobierzIndexPrzesylek_OutputMessage" />
+      <wsdl:fault wsaw:Action="naws.zus.pl/INawsUslugi/PobierzIndexPrzesylekExceptionFault" name="ExceptionFault" message="tns:INawsUslugi_PobierzIndexPrzesylek_ExceptionFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NawsUslugiSoap" type="tns:INawsUslugi">
+    <wsp:PolicyReference URI="#NawsUslugiSoap_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WyslijPrzesylke">
+      <soap12:operation soapAction="naws.zus.pl/WyslijPrzesylke" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransmision">
+      <soap12:operation soapAction="naws.zus.pl/CheckTransmision" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PobierzPotwierdzenie">
+      <soap12:operation soapAction="naws.zus.pl/PobierzPotwierdzenie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PobierzIndexPrzesylek">
+      <soap12:operation soapAction="naws.zus.pl/PobierzIndexPrzesylek" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ExceptionFault">
+        <soap12:fault use="literal" name="ExceptionFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NawsUslugi">
+    <wsdl:port name="NawsUslugiSoap" binding="tns:NawsUslugiSoap">
+      <soap12:address location="https://www.pt2.zus.pl/SDWI_AWS2/NawsUslugi.svc" />
+      <wsa:EndpointReference>
+        <wsa:Address>https://www.pt2.zus.pl/SDWI_AWS2/NawsUslugi.svc</wsa:Address>
+      </wsa:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
