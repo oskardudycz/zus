@@ -15,7 +15,8 @@ namespace Zus
                 ServicePointManager.ServerCertificateValidationCallback +=
                     new RemoteCertificateValidationCallback((sender, certificate, chain, errors) =>true);
 
-            var client = new NawsUslugiClient();
+            var client = new NawsUslugiClient();            
+            client.ChannelFactory.Endpoint.EndpointBehaviors.Add(new InspectorBehavior());
 
             var bytes = new byte[100];
             uint result = 0;
