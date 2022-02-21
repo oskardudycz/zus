@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Zus3.ServiceReference1 {
+namespace Zus.ServiceReference1 {
     using System.Runtime.Serialization;
     using System;
     
@@ -23,7 +23,7 @@ namespace Zus3.ServiceReference1 {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Zus3.ServiceReference1.MessageIndexElement[] m_collectionField;
+        private Zus.ServiceReference1.MessageIndexElement[] m_collectionField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -36,7 +36,7 @@ namespace Zus3.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public Zus3.ServiceReference1.MessageIndexElement[] m_collection {
+        public Zus.ServiceReference1.MessageIndexElement[] m_collection {
             get {
                 return this.m_collectionField;
             }
@@ -187,31 +187,31 @@ namespace Zus3.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="naws.zus.pl/WyslijPrzesylke", ReplyAction="naws.zus.pl/WyslijPrzesylkeResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="naws.zus.pl/INawsUslugi/WyslijPrzesylkeExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
-        Zus3.ServiceReference1.WyslijPrzesylkeResponse WyslijPrzesylke(Zus3.ServiceReference1.WyslijPrzesylkeRequest request);
+        Zus.ServiceReference1.WyslijPrzesylkeResponse WyslijPrzesylke(Zus.ServiceReference1.WyslijPrzesylkeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="naws.zus.pl/WyslijPrzesylke", ReplyAction="naws.zus.pl/WyslijPrzesylkeResponse")]
-        System.Threading.Tasks.Task<Zus3.ServiceReference1.WyslijPrzesylkeResponse> WyslijPrzesylkeAsync(Zus3.ServiceReference1.WyslijPrzesylkeRequest request);
+        System.Threading.Tasks.Task<Zus.ServiceReference1.WyslijPrzesylkeResponse> WyslijPrzesylkeAsync(Zus.ServiceReference1.WyslijPrzesylkeRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="naws.zus.pl/CheckTransmision", ReplyAction="naws.zus.pl/CheckTransmisionResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="naws.zus.pl/INawsUslugi/CheckTransmisionExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
-        Zus3.ServiceReference1.CheckTransmisionResponse CheckTransmision(Zus3.ServiceReference1.CheckTransmisionRequest request);
+        Zus.ServiceReference1.CheckTransmisionResponse CheckTransmision(Zus.ServiceReference1.CheckTransmisionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="naws.zus.pl/CheckTransmision", ReplyAction="naws.zus.pl/CheckTransmisionResponse")]
-        System.Threading.Tasks.Task<Zus3.ServiceReference1.CheckTransmisionResponse> CheckTransmisionAsync(Zus3.ServiceReference1.CheckTransmisionRequest request);
+        System.Threading.Tasks.Task<Zus.ServiceReference1.CheckTransmisionResponse> CheckTransmisionAsync(Zus.ServiceReference1.CheckTransmisionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="naws.zus.pl/PobierzPotwierdzenie", ReplyAction="naws.zus.pl/PobierzPotwierdzenieResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="naws.zus.pl/INawsUslugi/PobierzPotwierdzenieExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
-        Zus3.ServiceReference1.PobierzPotwierdzenieResponse PobierzPotwierdzenie(Zus3.ServiceReference1.PobierzPotwierdzenieRequest request);
+        Zus.ServiceReference1.PobierzPotwierdzenieResponse PobierzPotwierdzenie(Zus.ServiceReference1.PobierzPotwierdzenieRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="naws.zus.pl/PobierzPotwierdzenie", ReplyAction="naws.zus.pl/PobierzPotwierdzenieResponse")]
-        System.Threading.Tasks.Task<Zus3.ServiceReference1.PobierzPotwierdzenieResponse> PobierzPotwierdzenieAsync(Zus3.ServiceReference1.PobierzPotwierdzenieRequest request);
+        System.Threading.Tasks.Task<Zus.ServiceReference1.PobierzPotwierdzenieResponse> PobierzPotwierdzenieAsync(Zus.ServiceReference1.PobierzPotwierdzenieRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="naws.zus.pl/PobierzIndexPrzesylek", ReplyAction="naws.zus.pl/PobierzIndexPrzesylekResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(System.Exception), Action="naws.zus.pl/INawsUslugi/PobierzIndexPrzesylekExceptionFault", Name="Exception", Namespace="http://schemas.datacontract.org/2004/07/System")]
-        Zus3.ServiceReference1.PobierzIndexPrzesylekResponse PobierzIndexPrzesylek(Zus3.ServiceReference1.PobierzIndexPrzesylekRequest request);
+        Zus.ServiceReference1.PobierzIndexPrzesylekResponse PobierzIndexPrzesylek(Zus.ServiceReference1.PobierzIndexPrzesylekRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="naws.zus.pl/PobierzIndexPrzesylek", ReplyAction="naws.zus.pl/PobierzIndexPrzesylekResponse")]
-        System.Threading.Tasks.Task<Zus3.ServiceReference1.PobierzIndexPrzesylekResponse> PobierzIndexPrzesylekAsync(Zus3.ServiceReference1.PobierzIndexPrzesylekRequest request);
+        System.Threading.Tasks.Task<Zus.ServiceReference1.PobierzIndexPrzesylekResponse> PobierzIndexPrzesylekAsync(Zus.ServiceReference1.PobierzIndexPrzesylekRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -220,12 +220,12 @@ namespace Zus3.ServiceReference1 {
     public partial class WyslijPrzesylkeRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="WyslijPrzesylke", Namespace="naws.zus.pl", Order=0)]
-        public Zus3.ServiceReference1.WyslijPrzesylkeRequestBody Body;
+        public Zus.ServiceReference1.WyslijPrzesylkeRequestBody Body;
         
         public WyslijPrzesylkeRequest() {
         }
         
-        public WyslijPrzesylkeRequest(Zus3.ServiceReference1.WyslijPrzesylkeRequestBody Body) {
+        public WyslijPrzesylkeRequest(Zus.ServiceReference1.WyslijPrzesylkeRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -288,12 +288,12 @@ namespace Zus3.ServiceReference1 {
     public partial class WyslijPrzesylkeResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="WyslijPrzesylkeResponse", Namespace="naws.zus.pl", Order=0)]
-        public Zus3.ServiceReference1.WyslijPrzesylkeResponseBody Body;
+        public Zus.ServiceReference1.WyslijPrzesylkeResponseBody Body;
         
         public WyslijPrzesylkeResponse() {
         }
         
-        public WyslijPrzesylkeResponse(Zus3.ServiceReference1.WyslijPrzesylkeResponseBody Body) {
+        public WyslijPrzesylkeResponse(Zus.ServiceReference1.WyslijPrzesylkeResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -324,12 +324,12 @@ namespace Zus3.ServiceReference1 {
     public partial class CheckTransmisionRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CheckTransmision", Namespace="naws.zus.pl", Order=0)]
-        public Zus3.ServiceReference1.CheckTransmisionRequestBody Body;
+        public Zus.ServiceReference1.CheckTransmisionRequestBody Body;
         
         public CheckTransmisionRequest() {
         }
         
-        public CheckTransmisionRequest(Zus3.ServiceReference1.CheckTransmisionRequestBody Body) {
+        public CheckTransmisionRequest(Zus.ServiceReference1.CheckTransmisionRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -368,12 +368,12 @@ namespace Zus3.ServiceReference1 {
     public partial class CheckTransmisionResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CheckTransmisionResponse", Namespace="naws.zus.pl", Order=0)]
-        public Zus3.ServiceReference1.CheckTransmisionResponseBody Body;
+        public Zus.ServiceReference1.CheckTransmisionResponseBody Body;
         
         public CheckTransmisionResponse() {
         }
         
-        public CheckTransmisionResponse(Zus3.ServiceReference1.CheckTransmisionResponseBody Body) {
+        public CheckTransmisionResponse(Zus.ServiceReference1.CheckTransmisionResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -404,12 +404,12 @@ namespace Zus3.ServiceReference1 {
     public partial class PobierzPotwierdzenieRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="PobierzPotwierdzenie", Namespace="naws.zus.pl", Order=0)]
-        public Zus3.ServiceReference1.PobierzPotwierdzenieRequestBody Body;
+        public Zus.ServiceReference1.PobierzPotwierdzenieRequestBody Body;
         
         public PobierzPotwierdzenieRequest() {
         }
         
-        public PobierzPotwierdzenieRequest(Zus3.ServiceReference1.PobierzPotwierdzenieRequestBody Body) {
+        public PobierzPotwierdzenieRequest(Zus.ServiceReference1.PobierzPotwierdzenieRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -472,12 +472,12 @@ namespace Zus3.ServiceReference1 {
     public partial class PobierzPotwierdzenieResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="PobierzPotwierdzenieResponse", Namespace="naws.zus.pl", Order=0)]
-        public Zus3.ServiceReference1.PobierzPotwierdzenieResponseBody Body;
+        public Zus.ServiceReference1.PobierzPotwierdzenieResponseBody Body;
         
         public PobierzPotwierdzenieResponse() {
         }
         
-        public PobierzPotwierdzenieResponse(Zus3.ServiceReference1.PobierzPotwierdzenieResponseBody Body) {
+        public PobierzPotwierdzenieResponse(Zus.ServiceReference1.PobierzPotwierdzenieResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -524,12 +524,12 @@ namespace Zus3.ServiceReference1 {
     public partial class PobierzIndexPrzesylekRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="PobierzIndexPrzesylek", Namespace="naws.zus.pl", Order=0)]
-        public Zus3.ServiceReference1.PobierzIndexPrzesylekRequestBody Body;
+        public Zus.ServiceReference1.PobierzIndexPrzesylekRequestBody Body;
         
         public PobierzIndexPrzesylekRequest() {
         }
         
-        public PobierzIndexPrzesylekRequest(Zus3.ServiceReference1.PobierzIndexPrzesylekRequestBody Body) {
+        public PobierzIndexPrzesylekRequest(Zus.ServiceReference1.PobierzIndexPrzesylekRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -552,12 +552,12 @@ namespace Zus3.ServiceReference1 {
         public string strWersjaOprogramowania;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public Zus3.ServiceReference1.MessageIndex msgIndex;
+        public Zus.ServiceReference1.MessageIndex msgIndex;
         
         public PobierzIndexPrzesylekRequestBody() {
         }
         
-        public PobierzIndexPrzesylekRequestBody(string strIdZadania, string strNazwaProducenta, string strNazwaOprogramowania, string strWersjaOprogramowania, Zus3.ServiceReference1.MessageIndex msgIndex) {
+        public PobierzIndexPrzesylekRequestBody(string strIdZadania, string strNazwaProducenta, string strNazwaOprogramowania, string strWersjaOprogramowania, Zus.ServiceReference1.MessageIndex msgIndex) {
             this.strIdZadania = strIdZadania;
             this.strNazwaProducenta = strNazwaProducenta;
             this.strNazwaOprogramowania = strNazwaOprogramowania;
@@ -572,12 +572,12 @@ namespace Zus3.ServiceReference1 {
     public partial class PobierzIndexPrzesylekResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="PobierzIndexPrzesylekResponse", Namespace="naws.zus.pl", Order=0)]
-        public Zus3.ServiceReference1.PobierzIndexPrzesylekResponseBody Body;
+        public Zus.ServiceReference1.PobierzIndexPrzesylekResponseBody Body;
         
         public PobierzIndexPrzesylekResponse() {
         }
         
-        public PobierzIndexPrzesylekResponse(Zus3.ServiceReference1.PobierzIndexPrzesylekResponseBody Body) {
+        public PobierzIndexPrzesylekResponse(Zus.ServiceReference1.PobierzIndexPrzesylekResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -588,23 +588,23 @@ namespace Zus3.ServiceReference1 {
     public partial class PobierzIndexPrzesylekResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Zus3.ServiceReference1.MessageIndex msgIndex;
+        public Zus.ServiceReference1.MessageIndex msgIndex;
         
         public PobierzIndexPrzesylekResponseBody() {
         }
         
-        public PobierzIndexPrzesylekResponseBody(Zus3.ServiceReference1.MessageIndex msgIndex) {
+        public PobierzIndexPrzesylekResponseBody(Zus.ServiceReference1.MessageIndex msgIndex) {
             this.msgIndex = msgIndex;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface INawsUslugiChannel : Zus3.ServiceReference1.INawsUslugi, System.ServiceModel.IClientChannel {
+    public interface INawsUslugiChannel : Zus.ServiceReference1.INawsUslugi, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class NawsUslugiClient : System.ServiceModel.ClientBase<Zus3.ServiceReference1.INawsUslugi>, Zus3.ServiceReference1.INawsUslugi {
+    public partial class NawsUslugiClient : System.ServiceModel.ClientBase<Zus.ServiceReference1.INawsUslugi>, Zus.ServiceReference1.INawsUslugi {
         
         public NawsUslugiClient() {
         }
@@ -626,13 +626,13 @@ namespace Zus3.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Zus3.ServiceReference1.WyslijPrzesylkeResponse Zus3.ServiceReference1.INawsUslugi.WyslijPrzesylke(Zus3.ServiceReference1.WyslijPrzesylkeRequest request) {
+        Zus.ServiceReference1.WyslijPrzesylkeResponse Zus.ServiceReference1.INawsUslugi.WyslijPrzesylke(Zus.ServiceReference1.WyslijPrzesylkeRequest request) {
             return base.Channel.WyslijPrzesylke(request);
         }
         
         public void WyslijPrzesylke(byte[] pbyPrzesylka, uint uiPrzesylkaDlugosc, string strNazwaProducenta, string strNazwaOprogramowania, string strWersjaOprogramowania, string strB64SkrotPrzesylkiIn, string strTypPrzesylki, System.Nullable<int> metodaPodpisu, ref string strB64SkrotPrzesylkiOut, ref string strIdentyfikator) {
-            Zus3.ServiceReference1.WyslijPrzesylkeRequest inValue = new Zus3.ServiceReference1.WyslijPrzesylkeRequest();
-            inValue.Body = new Zus3.ServiceReference1.WyslijPrzesylkeRequestBody();
+            Zus.ServiceReference1.WyslijPrzesylkeRequest inValue = new Zus.ServiceReference1.WyslijPrzesylkeRequest();
+            inValue.Body = new Zus.ServiceReference1.WyslijPrzesylkeRequestBody();
             inValue.Body.pbyPrzesylka = pbyPrzesylka;
             inValue.Body.uiPrzesylkaDlugosc = uiPrzesylkaDlugosc;
             inValue.Body.strNazwaProducenta = strNazwaProducenta;
@@ -643,19 +643,19 @@ namespace Zus3.ServiceReference1 {
             inValue.Body.metodaPodpisu = metodaPodpisu;
             inValue.Body.strB64SkrotPrzesylkiOut = strB64SkrotPrzesylkiOut;
             inValue.Body.strIdentyfikator = strIdentyfikator;
-            Zus3.ServiceReference1.WyslijPrzesylkeResponse retVal = ((Zus3.ServiceReference1.INawsUslugi)(this)).WyslijPrzesylke(inValue);
+            Zus.ServiceReference1.WyslijPrzesylkeResponse retVal = ((Zus.ServiceReference1.INawsUslugi)(this)).WyslijPrzesylke(inValue);
             strB64SkrotPrzesylkiOut = retVal.Body.strB64SkrotPrzesylkiOut;
             strIdentyfikator = retVal.Body.strIdentyfikator;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Zus3.ServiceReference1.WyslijPrzesylkeResponse> Zus3.ServiceReference1.INawsUslugi.WyslijPrzesylkeAsync(Zus3.ServiceReference1.WyslijPrzesylkeRequest request) {
+        System.Threading.Tasks.Task<Zus.ServiceReference1.WyslijPrzesylkeResponse> Zus.ServiceReference1.INawsUslugi.WyslijPrzesylkeAsync(Zus.ServiceReference1.WyslijPrzesylkeRequest request) {
             return base.Channel.WyslijPrzesylkeAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Zus3.ServiceReference1.WyslijPrzesylkeResponse> WyslijPrzesylkeAsync(byte[] pbyPrzesylka, uint uiPrzesylkaDlugosc, string strNazwaProducenta, string strNazwaOprogramowania, string strWersjaOprogramowania, string strB64SkrotPrzesylkiIn, string strTypPrzesylki, System.Nullable<int> metodaPodpisu, string strB64SkrotPrzesylkiOut, string strIdentyfikator) {
-            Zus3.ServiceReference1.WyslijPrzesylkeRequest inValue = new Zus3.ServiceReference1.WyslijPrzesylkeRequest();
-            inValue.Body = new Zus3.ServiceReference1.WyslijPrzesylkeRequestBody();
+        public System.Threading.Tasks.Task<Zus.ServiceReference1.WyslijPrzesylkeResponse> WyslijPrzesylkeAsync(byte[] pbyPrzesylka, uint uiPrzesylkaDlugosc, string strNazwaProducenta, string strNazwaOprogramowania, string strWersjaOprogramowania, string strB64SkrotPrzesylkiIn, string strTypPrzesylki, System.Nullable<int> metodaPodpisu, string strB64SkrotPrzesylkiOut, string strIdentyfikator) {
+            Zus.ServiceReference1.WyslijPrzesylkeRequest inValue = new Zus.ServiceReference1.WyslijPrzesylkeRequest();
+            inValue.Body = new Zus.ServiceReference1.WyslijPrzesylkeRequestBody();
             inValue.Body.pbyPrzesylka = pbyPrzesylka;
             inValue.Body.uiPrzesylkaDlugosc = uiPrzesylkaDlugosc;
             inValue.Body.strNazwaProducenta = strNazwaProducenta;
@@ -666,49 +666,49 @@ namespace Zus3.ServiceReference1 {
             inValue.Body.metodaPodpisu = metodaPodpisu;
             inValue.Body.strB64SkrotPrzesylkiOut = strB64SkrotPrzesylkiOut;
             inValue.Body.strIdentyfikator = strIdentyfikator;
-            return ((Zus3.ServiceReference1.INawsUslugi)(this)).WyslijPrzesylkeAsync(inValue);
+            return ((Zus.ServiceReference1.INawsUslugi)(this)).WyslijPrzesylkeAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Zus3.ServiceReference1.CheckTransmisionResponse Zus3.ServiceReference1.INawsUslugi.CheckTransmision(Zus3.ServiceReference1.CheckTransmisionRequest request) {
+        Zus.ServiceReference1.CheckTransmisionResponse Zus.ServiceReference1.INawsUslugi.CheckTransmision(Zus.ServiceReference1.CheckTransmisionRequest request) {
             return base.Channel.CheckTransmision(request);
         }
         
         public void CheckTransmision(byte[] byDataIn, uint uiDataInLength, ref byte[] byDataOut, ref uint uiDataOutLength) {
-            Zus3.ServiceReference1.CheckTransmisionRequest inValue = new Zus3.ServiceReference1.CheckTransmisionRequest();
-            inValue.Body = new Zus3.ServiceReference1.CheckTransmisionRequestBody();
+            Zus.ServiceReference1.CheckTransmisionRequest inValue = new Zus.ServiceReference1.CheckTransmisionRequest();
+            inValue.Body = new Zus.ServiceReference1.CheckTransmisionRequestBody();
             inValue.Body.byDataIn = byDataIn;
             inValue.Body.uiDataInLength = uiDataInLength;
             inValue.Body.byDataOut = byDataOut;
             inValue.Body.uiDataOutLength = uiDataOutLength;
-            Zus3.ServiceReference1.CheckTransmisionResponse retVal = ((Zus3.ServiceReference1.INawsUslugi)(this)).CheckTransmision(inValue);
+            Zus.ServiceReference1.CheckTransmisionResponse retVal = ((Zus.ServiceReference1.INawsUslugi)(this)).CheckTransmision(inValue);
             byDataOut = retVal.Body.byDataOut;
             uiDataOutLength = retVal.Body.uiDataOutLength;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Zus3.ServiceReference1.CheckTransmisionResponse> Zus3.ServiceReference1.INawsUslugi.CheckTransmisionAsync(Zus3.ServiceReference1.CheckTransmisionRequest request) {
+        System.Threading.Tasks.Task<Zus.ServiceReference1.CheckTransmisionResponse> Zus.ServiceReference1.INawsUslugi.CheckTransmisionAsync(Zus.ServiceReference1.CheckTransmisionRequest request) {
             return base.Channel.CheckTransmisionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Zus3.ServiceReference1.CheckTransmisionResponse> CheckTransmisionAsync(byte[] byDataIn, uint uiDataInLength, byte[] byDataOut, uint uiDataOutLength) {
-            Zus3.ServiceReference1.CheckTransmisionRequest inValue = new Zus3.ServiceReference1.CheckTransmisionRequest();
-            inValue.Body = new Zus3.ServiceReference1.CheckTransmisionRequestBody();
+        public System.Threading.Tasks.Task<Zus.ServiceReference1.CheckTransmisionResponse> CheckTransmisionAsync(byte[] byDataIn, uint uiDataInLength, byte[] byDataOut, uint uiDataOutLength) {
+            Zus.ServiceReference1.CheckTransmisionRequest inValue = new Zus.ServiceReference1.CheckTransmisionRequest();
+            inValue.Body = new Zus.ServiceReference1.CheckTransmisionRequestBody();
             inValue.Body.byDataIn = byDataIn;
             inValue.Body.uiDataInLength = uiDataInLength;
             inValue.Body.byDataOut = byDataOut;
             inValue.Body.uiDataOutLength = uiDataOutLength;
-            return ((Zus3.ServiceReference1.INawsUslugi)(this)).CheckTransmisionAsync(inValue);
+            return ((Zus.ServiceReference1.INawsUslugi)(this)).CheckTransmisionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Zus3.ServiceReference1.PobierzPotwierdzenieResponse Zus3.ServiceReference1.INawsUslugi.PobierzPotwierdzenie(Zus3.ServiceReference1.PobierzPotwierdzenieRequest request) {
+        Zus.ServiceReference1.PobierzPotwierdzenieResponse Zus.ServiceReference1.INawsUslugi.PobierzPotwierdzenie(Zus.ServiceReference1.PobierzPotwierdzenieRequest request) {
             return base.Channel.PobierzPotwierdzenie(request);
         }
         
         public void PobierzPotwierdzenie(string strIdentyfikator, string strNazwaProducenta, string strNazwaOprogramowania, string strWersjaOprogramowania, ref string strIdZadania, ref System.DateTime DataWpisu, ref string strTyp, ref uint uiWielkoscPrzesylki, ref byte[] byPrzesylka, ref string strB64Skrot) {
-            Zus3.ServiceReference1.PobierzPotwierdzenieRequest inValue = new Zus3.ServiceReference1.PobierzPotwierdzenieRequest();
-            inValue.Body = new Zus3.ServiceReference1.PobierzPotwierdzenieRequestBody();
+            Zus.ServiceReference1.PobierzPotwierdzenieRequest inValue = new Zus.ServiceReference1.PobierzPotwierdzenieRequest();
+            inValue.Body = new Zus.ServiceReference1.PobierzPotwierdzenieRequestBody();
             inValue.Body.strIdentyfikator = strIdentyfikator;
             inValue.Body.strNazwaProducenta = strNazwaProducenta;
             inValue.Body.strNazwaOprogramowania = strNazwaOprogramowania;
@@ -719,7 +719,7 @@ namespace Zus3.ServiceReference1 {
             inValue.Body.uiWielkoscPrzesylki = uiWielkoscPrzesylki;
             inValue.Body.byPrzesylka = byPrzesylka;
             inValue.Body.strB64Skrot = strB64Skrot;
-            Zus3.ServiceReference1.PobierzPotwierdzenieResponse retVal = ((Zus3.ServiceReference1.INawsUslugi)(this)).PobierzPotwierdzenie(inValue);
+            Zus.ServiceReference1.PobierzPotwierdzenieResponse retVal = ((Zus.ServiceReference1.INawsUslugi)(this)).PobierzPotwierdzenie(inValue);
             strIdZadania = retVal.Body.strIdZadania;
             DataWpisu = retVal.Body.DataWpisu;
             strTyp = retVal.Body.strTyp;
@@ -729,13 +729,13 @@ namespace Zus3.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Zus3.ServiceReference1.PobierzPotwierdzenieResponse> Zus3.ServiceReference1.INawsUslugi.PobierzPotwierdzenieAsync(Zus3.ServiceReference1.PobierzPotwierdzenieRequest request) {
+        System.Threading.Tasks.Task<Zus.ServiceReference1.PobierzPotwierdzenieResponse> Zus.ServiceReference1.INawsUslugi.PobierzPotwierdzenieAsync(Zus.ServiceReference1.PobierzPotwierdzenieRequest request) {
             return base.Channel.PobierzPotwierdzenieAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Zus3.ServiceReference1.PobierzPotwierdzenieResponse> PobierzPotwierdzenieAsync(string strIdentyfikator, string strNazwaProducenta, string strNazwaOprogramowania, string strWersjaOprogramowania, string strIdZadania, System.DateTime DataWpisu, string strTyp, uint uiWielkoscPrzesylki, byte[] byPrzesylka, string strB64Skrot) {
-            Zus3.ServiceReference1.PobierzPotwierdzenieRequest inValue = new Zus3.ServiceReference1.PobierzPotwierdzenieRequest();
-            inValue.Body = new Zus3.ServiceReference1.PobierzPotwierdzenieRequestBody();
+        public System.Threading.Tasks.Task<Zus.ServiceReference1.PobierzPotwierdzenieResponse> PobierzPotwierdzenieAsync(string strIdentyfikator, string strNazwaProducenta, string strNazwaOprogramowania, string strWersjaOprogramowania, string strIdZadania, System.DateTime DataWpisu, string strTyp, uint uiWielkoscPrzesylki, byte[] byPrzesylka, string strB64Skrot) {
+            Zus.ServiceReference1.PobierzPotwierdzenieRequest inValue = new Zus.ServiceReference1.PobierzPotwierdzenieRequest();
+            inValue.Body = new Zus.ServiceReference1.PobierzPotwierdzenieRequestBody();
             inValue.Body.strIdentyfikator = strIdentyfikator;
             inValue.Body.strNazwaProducenta = strNazwaProducenta;
             inValue.Body.strNazwaOprogramowania = strNazwaOprogramowania;
@@ -746,40 +746,40 @@ namespace Zus3.ServiceReference1 {
             inValue.Body.uiWielkoscPrzesylki = uiWielkoscPrzesylki;
             inValue.Body.byPrzesylka = byPrzesylka;
             inValue.Body.strB64Skrot = strB64Skrot;
-            return ((Zus3.ServiceReference1.INawsUslugi)(this)).PobierzPotwierdzenieAsync(inValue);
+            return ((Zus.ServiceReference1.INawsUslugi)(this)).PobierzPotwierdzenieAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Zus3.ServiceReference1.PobierzIndexPrzesylekResponse Zus3.ServiceReference1.INawsUslugi.PobierzIndexPrzesylek(Zus3.ServiceReference1.PobierzIndexPrzesylekRequest request) {
+        Zus.ServiceReference1.PobierzIndexPrzesylekResponse Zus.ServiceReference1.INawsUslugi.PobierzIndexPrzesylek(Zus.ServiceReference1.PobierzIndexPrzesylekRequest request) {
             return base.Channel.PobierzIndexPrzesylek(request);
         }
         
-        public void PobierzIndexPrzesylek(string strIdZadania, string strNazwaProducenta, string strNazwaOprogramowania, string strWersjaOprogramowania, ref Zus3.ServiceReference1.MessageIndex msgIndex) {
-            Zus3.ServiceReference1.PobierzIndexPrzesylekRequest inValue = new Zus3.ServiceReference1.PobierzIndexPrzesylekRequest();
-            inValue.Body = new Zus3.ServiceReference1.PobierzIndexPrzesylekRequestBody();
+        public void PobierzIndexPrzesylek(string strIdZadania, string strNazwaProducenta, string strNazwaOprogramowania, string strWersjaOprogramowania, ref Zus.ServiceReference1.MessageIndex msgIndex) {
+            Zus.ServiceReference1.PobierzIndexPrzesylekRequest inValue = new Zus.ServiceReference1.PobierzIndexPrzesylekRequest();
+            inValue.Body = new Zus.ServiceReference1.PobierzIndexPrzesylekRequestBody();
             inValue.Body.strIdZadania = strIdZadania;
             inValue.Body.strNazwaProducenta = strNazwaProducenta;
             inValue.Body.strNazwaOprogramowania = strNazwaOprogramowania;
             inValue.Body.strWersjaOprogramowania = strWersjaOprogramowania;
             inValue.Body.msgIndex = msgIndex;
-            Zus3.ServiceReference1.PobierzIndexPrzesylekResponse retVal = ((Zus3.ServiceReference1.INawsUslugi)(this)).PobierzIndexPrzesylek(inValue);
+            Zus.ServiceReference1.PobierzIndexPrzesylekResponse retVal = ((Zus.ServiceReference1.INawsUslugi)(this)).PobierzIndexPrzesylek(inValue);
             msgIndex = retVal.Body.msgIndex;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Zus3.ServiceReference1.PobierzIndexPrzesylekResponse> Zus3.ServiceReference1.INawsUslugi.PobierzIndexPrzesylekAsync(Zus3.ServiceReference1.PobierzIndexPrzesylekRequest request) {
+        System.Threading.Tasks.Task<Zus.ServiceReference1.PobierzIndexPrzesylekResponse> Zus.ServiceReference1.INawsUslugi.PobierzIndexPrzesylekAsync(Zus.ServiceReference1.PobierzIndexPrzesylekRequest request) {
             return base.Channel.PobierzIndexPrzesylekAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Zus3.ServiceReference1.PobierzIndexPrzesylekResponse> PobierzIndexPrzesylekAsync(string strIdZadania, string strNazwaProducenta, string strNazwaOprogramowania, string strWersjaOprogramowania, Zus3.ServiceReference1.MessageIndex msgIndex) {
-            Zus3.ServiceReference1.PobierzIndexPrzesylekRequest inValue = new Zus3.ServiceReference1.PobierzIndexPrzesylekRequest();
-            inValue.Body = new Zus3.ServiceReference1.PobierzIndexPrzesylekRequestBody();
+        public System.Threading.Tasks.Task<Zus.ServiceReference1.PobierzIndexPrzesylekResponse> PobierzIndexPrzesylekAsync(string strIdZadania, string strNazwaProducenta, string strNazwaOprogramowania, string strWersjaOprogramowania, Zus.ServiceReference1.MessageIndex msgIndex) {
+            Zus.ServiceReference1.PobierzIndexPrzesylekRequest inValue = new Zus.ServiceReference1.PobierzIndexPrzesylekRequest();
+            inValue.Body = new Zus.ServiceReference1.PobierzIndexPrzesylekRequestBody();
             inValue.Body.strIdZadania = strIdZadania;
             inValue.Body.strNazwaProducenta = strNazwaProducenta;
             inValue.Body.strNazwaOprogramowania = strNazwaOprogramowania;
             inValue.Body.strWersjaOprogramowania = strWersjaOprogramowania;
             inValue.Body.msgIndex = msgIndex;
-            return ((Zus3.ServiceReference1.INawsUslugi)(this)).PobierzIndexPrzesylekAsync(inValue);
+            return ((Zus.ServiceReference1.INawsUslugi)(this)).PobierzIndexPrzesylekAsync(inValue);
         }
     }
 }

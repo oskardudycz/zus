@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2B84D6B9-2EF3-499E-B392-727A5EA3C89C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Zus3</RootNamespace>
-    <AssemblyName>Zus3</AssemblyName>
+    <RootNamespace>Zus</RootNamespace>
+    <AssemblyName>Zus</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization" />
@@ -59,23 +60,24 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="TraceListener.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Connected Services\ServiceReference1\NawsUslugi.wsdl" />
-    <None Include="Connected Services\ServiceReference1\Zus3.ServiceReference1.CheckTransmisionResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Zus.ServiceReference1.CheckTransmisionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\Zus3.ServiceReference1.MessageIndex.datasource">
+    <None Include="Connected Services\ServiceReference1\Zus.ServiceReference1.MessageIndex.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\Zus3.ServiceReference1.PobierzIndexPrzesylekResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Zus.ServiceReference1.PobierzIndexPrzesylekResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\Zus3.ServiceReference1.PobierzPotwierdzenieResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Zus.ServiceReference1.PobierzPotwierdzenieResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\Zus3.ServiceReference1.WyslijPrzesylkeResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\Zus.ServiceReference1.WyslijPrzesylkeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
