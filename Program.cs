@@ -1,9 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography;
 using System.Text;
+using Polly;
+using Polly.Retry;
 using Zus.ServiceReference1;
 
 namespace Zus
@@ -27,9 +30,9 @@ namespace Zus
             client.CheckTransmision(bytes, (uint)bytes.Length, ref bytes, ref result);
 
 
-            var strNazwaProducenta = "My company";
-            var strNazwaOprogramowania = "Supersoft";
-            var strWersjaOprogramowania = "1.1.2";
+            var strNazwaProducenta = "inFakt Sp. z o.o.";
+            var strNazwaOprogramowania = "Infakt";
+            var strWersjaOprogramowania = "6.27.9";
 
             var strB64SkrotPrzesylkiIn = GetSha256(bytes);
             var strTypPrzesylki = "SDWI3.XMLENC.ASIC.XADESB.KEDUXML";
@@ -51,12 +54,23 @@ namespace Zus
                 Console.WriteLine($"ERROR! Nie udało się wysłać przesyłki: {ex.Message}");
             }
             MessageIndex msgIndex = null;
+            MessageIndexElement msgIndexElement = null;
             
             try
             {
-                client.PobierzIndexPrzesylek(strIdentyfikator, strNazwaProducenta, strNazwaOprogramowania, strWersjaOprogramowania, ref msgIndex);
+                Policy
+                    .Handle<Exception>()
+                    .WaitAndRetry(5, retryAttempt =>
+                        TimeSpan.FromSeconds(Math.Pow(2, retryAttempt))
+                    ).Execute(() =>
+                    {
+                        client.PobierzIndexPrzesylek(strIdentyfikator, strNazwaProducenta, strNazwaOprogramowania, strWersjaOprogramowania, ref msgIndex);
 
-                Console.WriteLine($"Udało się pobrać indeks przesylek.");
+                        msgIndexElement = msgIndex?.m_collection.First();
+                    });
+                
+
+                Console.WriteLine("Udało się pobrać indeks przesylek.");
             }
             catch (Exception ex)
             {
@@ -73,8 +87,10 @@ namespace Zus
             
             try
             {
-                client.PobierzPotwierdzenie(strIdentyfikator, strNazwaProducenta, strNazwaOprogramowania, strWersjaOprogramowania, ref strIdZadania,
+                client.PobierzPotwierdzenie(msgIndexElement.strIdentyfikator, strNazwaProducenta, strNazwaOprogramowania, strWersjaOprogramowania, ref strIdZadania,
                     ref dataWpisu, ref strTyp, ref uiWielkoscPrzesylki, ref byPrzesylka, ref strB64Skrot);
+                
+                File.WriteAllBytes("output.zip", byPrzesylka);
 
                 Console.WriteLine($"Udało się pobrać potwierdzenie. IdZadania: {strIdZadania}");
             }
